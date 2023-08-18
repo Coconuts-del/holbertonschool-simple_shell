@@ -102,8 +102,9 @@ total 1
 * **Run shell in non-interactive mode:**
 ```
 root@ebd0ba4bd160:/holbertonschool-simple_shell# echo "/bin/ls" | ./simple_shell
-AUTHORS             man_1_simple_shell  read_line.c  shell.c  simple_shell
-get_command_path.c  new_process.c       README.md    shell.h  split_line.
+AUTHORS
+
+
 ```
 
 ## `Resources`
