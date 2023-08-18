@@ -114,7 +114,7 @@ get_command_path.c  new_process.c       README.md    shell.h  split_line.
 
 ## `Flowchart of simple shell` :computer:
 
-<img width="626" alt="screencapture-app-diagrams-net-2023-05-08-00_22_35" src="https://user-images.githubusercontent.com/124044887/236705374-4b66204d-9474-49c0-a306-04b27ac2ddd4.png">
+
 
 ## `License` :busts_in_silhouette:
 Authors :
