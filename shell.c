@@ -10,11 +10,11 @@ int main(__attribute__((unused))int argc, char *argv[], char *envp[])
 {
 	char *line, *command_path;
 	char **commands;
-	int status = 1, interactive = 0;
+	int status = 0, interactive = 0;
 
 	if (isatty(STDIN_FILENO) == 1)
 		interactive = 1;
-	while (status)
+	while (!status)
 	{
 		if (interactive)
 			printf("#prompt$ ");
@@ -29,7 +29,7 @@ int main(__attribute__((unused))int argc, char *argv[], char *envp[])
 		if (commands[0])
 		{
 			if (strcmp(commands[0], "exit") == 0 || strcmp(commands[0], "EXIT") == 0)
-				status = 0;
+				status = 1;
 			else
 			{
 				command_path = get_command_path(commands[0]);
