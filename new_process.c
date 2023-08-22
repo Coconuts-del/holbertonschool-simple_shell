@@ -3,7 +3,7 @@
 /**
  * execute - Function that execute a command
  * @command_path: Path to the command to execute
- * @args: Arguments for the command
+ * @argv: Arguments for the command
  * @envp: Array of env variables
  * Return: Return 1 on successful execution
  */
