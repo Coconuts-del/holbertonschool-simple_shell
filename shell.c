@@ -23,7 +23,7 @@ int main(__attribute__((unused))int argc, char *argv[], char *envp[])
 		commands = split_line(line);
 		if (commands[0])
 		{
-			if (strcmp(commands[0], "exit") == 0 || strcmp(commands[0], "EXIT") == 0)
+			if (strcmp(commands[0], "exit") == 0)
 				status = 0;
 			else
 			{
