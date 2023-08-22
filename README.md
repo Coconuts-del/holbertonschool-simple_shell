@@ -42,23 +42,22 @@ Basic loop of a shell :
 
 ## `List of functions and system calls that we used`
 
-* ```printf``` (man 2 printf)
-* ```fprintf``` (man 1 fprintf)
+* ```printf``` (man 3 printf)
+* ```fprintf``` (man 3 fprintf)
 * ```exit``` (man 2 exit)
-* ```fork``` (man 1 fork)
-* ```free``` (man 5 free)
-* ```getline``` (man 1 getline)
-* ```isatty``` (man 2 isatty)
+* ```fork``` (man 2 fork)
+* ```free``` (man 3 free)
+* ```getline``` (man 3 getline)
+* ```isatty``` (man 3 isatty)
 * ```malloc``` (man 3 malloc)
 * ```perror``` (man 3 perror)
 * ```strtok``` (man 3 strtok)
-* ```wait``` (man 2 waitpid)
+* ```wait``` (man 2 wait)
 * ```access``` (man 2 access)
 * ```strcpy``` (man 2 strcpy)
 * ```strcat``` (man 2 strcat)
 * ```strtok``` (man 2 strtok)
-* ```strcmp``` (man 1 strcmp)
-* ```getline``` (man 3 getline)
+* ```strcmp``` (man 2 strcmp)
 * ```strlen``` (man 3 strlen)
 
 
@@ -72,7 +71,7 @@ All your files will be compiled on Ubuntu 20.04 LTS using gcc, using the options
 
 To compile the simple shell, run:, execute:
 ```bash
-gcc -Wall -Werror -Wextra -pedantic *.c -o simple_shell
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o simple_shell
 ```
 
 This will create an executable named: ```simple_shell```
@@ -93,16 +92,24 @@ echo "/bin/ls" | ./simple_shell
 
 ```
 root@ebd0ba4bd160:/holbertonschool-simple_shell# ./simple_shell
-#prompt$ ls -l
-total 1
--rw-r--r-- 1 root root   279 AUG  2 05:36 AUTHORS
+root@77ecf37628fa:/holbertonschool-simple_shell# ls -l
+total 56
+-rw-r--r-- 1 root root   269 Aug 14 05:29 AUTHORS
+-rw-r--r-- 1 root root  1034 Aug 22 05:01 get_command_path.c
+-rw-r--r-- 1 root root   506 Aug 22 01:24 new_process.c
+-rw-r--r-- 1 root root   408 Aug 22 01:24 read_line.c
+-rw-r--r-- 1 root root  4266 Aug 18 06:02 README.md
+-rw-r--r-- 1 root root  1067 Aug 22 01:24 shell.c
+-rw-r--r-- 1 root root   420 Aug 22 01:24 shell.h
+-rwxr-xr-x 1 root root 17960 Aug 22 05:02 simple_shell
+-rw-r--r-- 1 root root   577 Aug 22 01:24 split_line.c
 
-#prompt$
+
 ```
 * **Run shell in non-interactive mode:**
 ```
 root@ebd0ba4bd160:/holbertonschool-simple_shell# echo "/bin/ls" | ./simple_shell
-AUTHORS
+AUTHORS get_command_path.c  new_process.c  read_line.c  README.md  shell.c  shell.h  simple_shell  split_line.c
 
 
 ```
