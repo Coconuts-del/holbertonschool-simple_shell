@@ -10,11 +10,17 @@ char *get_command_path(char *command)
 	char *command_path = NULL;
 	char *path_env = getenv("PATH");
 	char bin_path[SIZE];
+	char *path_copy = NULL;
+	char *token = NULL;
+
+	if (command[0] == '/')  /* Use == instead of !=  */
+		if (access(command, X_OK) == 0)
+			command_path = command;
 
 	if (path_env != NULL)
 	{
-		char *path_copy = strdup(path_env);
-		char *token = strtok(path_copy, ":");
+		path_copy = strdup(path_env);
+		token = strtok(path_copy, ":");
 
 		while (token != NULL && command_path == NULL)
 		{
@@ -25,10 +31,7 @@ char *get_command_path(char *command)
 				strcat(bin_path, "/");
 				strcat(bin_path, command);
 				if (access(bin_path, X_OK) == 0)
-				{
 					strcpy(command_path, bin_path);
-					/*  break; // Command found in this path*/
-				}
 				else
 				{
 					free(command_path);
