@@ -1,41 +1,46 @@
 #include "shell.h"
-#include <stdbool.h>
-
+/**
+ * main - Main function for the simple shell
+ * @argc: Argument count
+ * @argv: Array of argument
+ * @envp: Array of env variables
+ * Return: Return code of the command execution
+ */
 int main(__attribute__((unused))int argc, char *argv[], char *envp[])
 {
-  char *line, *command_path;
-  char **commands;
-  bool interactive_mode = isatty(STDIN_FILENO);
-  while (1)
-    {
-      if (interactive_mode)
-	printf("#prompt$ ");
+	char *line, *command_path;
+	char **commands;
+	int status = 1;
 
-      line = read_line();
-      if (line == NULL)
-	break;
-
-      commands = split_line(line);
-      if (commands[0])
+	while (status)
 	{
-	  if (strcmp(commands[0], "exit") == 0)
-	    break;
-
-	  command_path = get_command_path(commands[0]);
-	  if (command_path == NULL)
-	    printf("%s: No such file or directory\n", argv[0]);
-	  else
-	    {
-	      execute(command_path, commands, envp);
-	      if (command_path != commands[0])
-		free(command_path);
-	    }
+		status = isatty(0);
+		if (status == 1)
+			printf("#prompt$ ");
+		line = read_line();
+		if (line == NULL)
+			continue;
+		commands = split_line(line);
+		if (commands[0])
+		{
+			if (strcmp(commands[0], "exit") == 0)
+				status = 0;
+			else
+			{
+				command_path = get_command_path(commands[0]);
+				if (command_path == NULL)
+					printf("%s: No such file or directory\n", argv[0]);
+				else
+				{
+					execute(command_path, commands, envp);
+					if (command_path != commands[0])
+						free(command_path);
+				}
+			}
+		}
+		free(commands);
+		free(line);
+		line = NULL;
 	}
-
-      free(commands);
-      free(line);
-      line = NULL;
-    }
-
-  return 0;
+	return (0);
 }
