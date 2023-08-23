@@ -1,0 +1,69 @@
+.TH SHELL 1 "23 August  2023" GNU "Shell man page"
+.SH NAME
+.B simple_shell
+- Command line interpreter (shell)
+.SH SYNOPSIS
+The shell is executed by typing ./simple_shell
+.br
+Then, it will wait for an input such as : command [arguments] [other]
+.SH DESCRIPTION
+This shell is a project dedicated to our studies. My partner and I, have tried to mimic the behavior of a real shell. In case you don't know what a shell is (I doubt that) here is a brief explanation. A shell is a command language interpreter that executes commands read from the standard input or from a file.
+.br
+.B What simple_shell  can do :
+.br
+- Executes any command with its arguments
+.br
+- Executes built-in commands
+.br
+- Handle pipes
+.br
+- Handle the command seperator ;
+.br
+- Handle && and || logical operators
+.br
+- handle variable replacement
+.br
+- handle the $? variable
+.br
+- handle the $$ variable
+.SH BUILT-IN FUNCTIONS
+Those are the available built-in functions :
+.br
+- exit : exit the shell
+.br
+- pwd : Display the current directory
+.br
+- env : Display the environment variables
+.SH OPTIONS
+There are no options for the moment.
+.SH EXIT STATUS
+The exit value depends on how a function has terminated. Every error is identified by a certain value. On success it will always return 0.
+.SH RETURN VALUE
+Return 0 on success, otherwise it will return the exit value.
+.SH ENVIRONMENT
+- PATH
+.br
+- env
+
+.SH BUGS
+There is no known bugs at the moment.
+.SH EXAMPLE
+.B Two ways to execute our shell :
+.br
+.B The intercative mode :
+.br
+$ ./simple_shell
+.br
+#prompt$ /bin/ls
+.br
+simple_shell
+.br
+#prompt$ exit
+.br
+.B The non-interactive mode :
+.br
+$ echo "/bin/ls" | ./simple_shell
+.br
+simple_shell main.c shell.c
+.SH AUTHORS
+Claudine Sillam , Idoudi Mokhtar
