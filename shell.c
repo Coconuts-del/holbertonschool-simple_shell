@@ -15,6 +15,7 @@ int main(int argc, char *argv[], char *envp[])
 
 	if (argc > 1)
 	{
+		status = 0;
 		line = read_line();
 		if (line == NULL)
 			return (1);
