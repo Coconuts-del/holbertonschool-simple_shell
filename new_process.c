@@ -10,6 +10,7 @@
 int execute(char *command_path, char *argv[], char *envp[])
 {
 	pid_t pid;
+	int status;
 
 	pid = fork();
 	if (pid == 0)
@@ -19,7 +20,7 @@ int execute(char *command_path, char *argv[], char *envp[])
 	}
 	else if (pid > 0)
 	{
-		wait(NULL);
+		wait(&status);
 	}
 	else
 	{
