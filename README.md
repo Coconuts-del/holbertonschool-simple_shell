@@ -26,7 +26,7 @@ Basic loop of a shell :
 | shell.c | The main function of the simple shell |
 | new_procees.c | Function that creates a new process. |
 | get_command_path.c | Searches for the command in the system's PATH and returns the command's path if found. |
-| read_line.c | Function to read a line from stdint |
+| read_line.c | Function to read a line from stdin |
 | split_line.c | Parses a line into an array of commands. |
 
 ## `Simple Shell `🐚
@@ -34,8 +34,8 @@ Basic loop of a shell :
 - The shell is a program that takes commands from the keyboard via the terminal, and gives them to the operating system to perform.
 - The prompt is displayed each time a command has been executed
 - This program displays a prompt and wait for user type a command
-- When the user type EXIT, shell will end and exit the interface
-- The program print the current environement when user type ENV
+- When the user type exit, shell will end and exit the interface
+- The program print the current environement when user type env
 - The program quit when the user enter **CTRL + C**
 - The user could stop the program using **CTRL  + D**
 
@@ -43,6 +43,7 @@ Basic loop of a shell :
 ## `List of functions and system calls that we used`
 
 * ```printf``` (man 3 printf)
+* ```execve``` (man 2 execve)
 * ```fprintf``` (man 3 fprintf)
 * ```exit``` (man 2 exit)
 * ```fork``` (man 2 fork)
@@ -59,7 +60,7 @@ Basic loop of a shell :
 * ```strtok``` (man 2 strtok)
 * ```strcmp``` (man 2 strcmp)
 * ```strlen``` (man 3 strlen)
-
+* ```strdup``` (man 3 strdup)
 
 ## `Usage` :man_technologist:
 
