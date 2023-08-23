@@ -9,15 +9,12 @@ char *read_line()
 {
 	char *line = NULL;
 	size_t size_line = 0;
-	/*int i;*/
 	int nread;
 
 	nread  =  getline(&line, &size_line, stdin);
 	if (nread == -1)
 	{
 		free(line);
-		/* perror("error in read_line: getline");*/
-		/*line = NULL;*/
 		exit(1);
 	}
 
