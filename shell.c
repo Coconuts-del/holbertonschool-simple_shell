@@ -10,16 +10,21 @@ int main(__attribute__((unused))int argc, char *argv[], char *envp[])
 {
 	char *line, *command_path;
 	char **commands;
-	int status = 1;
+	int status = 1, interactive = 0;
 
+	if (isatty(STDIN_FILENO) == 1)
+		interactive = 1;
 	while (status)
 	{
-		status = isatty(0);
-		if (status == 1)
+		if (interactive)
 			printf("#prompt$ ");
 		line = read_line();
 		if (line == NULL)
+		{
+			if (!interactive)
+				break;
 			continue;
+		}
 		commands = split_line(line);
 		if (commands[0])
 		{
