@@ -94,16 +94,17 @@ echo "/bin/ls" | ./simple_shell
 ```
 root@ebd0ba4bd160:/holbertonschool-simple_shell# ./simple_shell
 root@77ecf37628fa:/holbertonschool-simple_shell# ls -l
-total 56
+total 60
 -rw-r--r-- 1 root root   269 Aug 14 05:29 AUTHORS
--rw-r--r-- 1 root root  1034 Aug 22 05:01 get_command_path.c
--rw-r--r-- 1 root root   506 Aug 22 01:24 new_process.c
--rw-r--r-- 1 root root   408 Aug 22 01:24 read_line.c
--rw-r--r-- 1 root root  4266 Aug 18 06:02 README.md
--rw-r--r-- 1 root root  1067 Aug 22 01:24 shell.c
+-rw-r--r-- 1 root root  1034 Aug 23 06:42 get_command_path.c
+-rwxr--r-- 1 root root  1726 Aug 23 07:46 man_1_simple_shell
+-rw-r--r-- 1 root root   522 Aug 23 02:11 new_process.c
+-rw-r--r-- 1 root root   331 Aug 23 04:59 read_line.c
+-rw-r--r-- 1 root root  4870 Aug 23 05:34 README.md
+-rw-r--r-- 1 root root   945 Aug 23 04:59 shell.c
 -rw-r--r-- 1 root root   420 Aug 22 01:24 shell.h
--rwxr-xr-x 1 root root 17960 Aug 22 05:02 simple_shell
--rw-r--r-- 1 root root   577 Aug 22 01:24 split_line.c
+-rwxr-xr-x 1 root root 17904 Aug 23 06:39 simple_shell
+-rw-r--r-- 1 root root   577 Aug 22 01:24 split_line.c   
 
 
 ```
