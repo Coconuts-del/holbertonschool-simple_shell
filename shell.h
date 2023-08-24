@@ -15,7 +15,6 @@
 #include <sys/stat.h>
 
 
-
 char *read_line();
 char **split_line(char *line);
 char *get_command_path(char *command);
