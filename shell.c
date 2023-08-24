@@ -1,45 +1,74 @@
-#include "shell.h"
-/**
- * main - Main function for the simple shell
- * @argc: Argument count
- * @argv: Array of argument
- * @envp: Array of env variables
- * Return: Return code of the command execution
- */
-int main(__attribute__((unused))int argc, char *argv[], char *envp[])
+int main(int argc, char *argv[], char *envp[])
 {
-	char *line, *command_path;
-	char **commands;
-	int status = 1;
+  char *line , *command_path;
+  char **commands;
+  int status =0 , return_code = 0 , interactive = 0;
 
-	while (status)
+  (void)argc;
+  (void)argv;
+
+  if (isatty(STDIN_FILENO) == 1)
+    {
+      interactive = 1;
+    }
+
+  do
+    {
+      if (interactive)
 	{
-		if (isatty(STDIN_FILENO))
-			printf("#prompt$ ");
-		line = read_line();
-		if (line == NULL)
-			continue;
-		commands = split_line(line);
-		if (commands[0])
-		{
-			if (strcmp(commands[0], "exit") == 0)
-				status = 0;
-			else
-			{
-				command_path = get_command_path(commands[0]);
-				if (command_path == NULL)
-					printf("%s: No such file or directory\n", argv[0]);
-				else
-				{
-					execute(command_path, commands, envp);
-					if (command_path != commands[0])
-						free(command_path);
-				}
-			}
-		}
-		free(commands);
-		free(line);
-		line = NULL;
+	  printf("#prompt$ ");
 	}
-	return (0);
+
+      line = read_line();
+      if (line == NULL)
+	{
+	  if (!interactive)
+	    {
+	      break;
+	    }
+	  else
+	    {
+	      continue;
+	    }
+	}
+
+
+
+      commands = split_line(line);
+
+      if (commands[0])
+	{
+	  if   ((strcmp(commands[0], "exit") == 0)  ||  (strcmp(commands[0], "EXIT") == 0))
+	    {
+	      status = 1;
+	    }
+	  else
+	    {
+	      command_path = get_command_path(commands[0]);
+
+	      if (command_path == NULL)
+		{
+		  printf("%s: command not found\n", commands[0]);
+		}
+	      else
+		{
+
+		  execute(command_path, commands, envp);
+
+
+		  if (command_path != commands[0])
+		    {
+		      free(command_path);
+
+		    }
+
+		}
+	    }
+	}
+      free(commands);
+      free(line);
+      line = NULL;
+    } while (!status);
+
+  return (return_code);
 }
