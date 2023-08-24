@@ -111,9 +111,9 @@ total 60
 * **Run shell in non-interactive mode:**
 ```
 root@77ecf37628fa:/holbertonschool-simple_shell# echo "/bin/ls" | ./simple_shell
-
 ```
-AUTHORS  get_command_path.c  man_1_simple_shell  new_process.c  read_line.c  README.md                                                                                                           shell.c  shell.h  simple_shell   split_line.c
+AUTHORS  get_command_path.c  man_1_simple_shell  new_process.c  read_line.c  README.md 
+shell.c  shell.h  simple_shell   split_line.c
 
 
 
