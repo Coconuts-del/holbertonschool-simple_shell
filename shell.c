@@ -14,8 +14,7 @@ int main(__attribute__((unused))int argc, char *argv[], char *envp[])
 
 	while (status)
 	{
-		status = isatty(0);
-		if (status == 1)
+		if (isatty(STDIN_FILENO))
 			printf("#prompt$ ");
 		line = read_line();
 		if (line == NULL)
