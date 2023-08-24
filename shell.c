@@ -24,15 +24,17 @@ int main(int argc, char *argv[], char *envp[])
 		{
 			command_path = get_command_path(commands[0]);
 			if (command_path == NULL)
-				printf("%s: Command not found\n", commands[0]);
+				printf("%s: Command not coco\n", commands[0]);
 			else
 			{
 				execute(command_path, commands, envp);
+				status = 0;
 				free(command_path);
 			}
 		}
 		free(commands);
 		free(line);
+		return (status);
 	}
 	else
 	{
