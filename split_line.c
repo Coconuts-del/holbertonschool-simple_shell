@@ -18,6 +18,7 @@ char **split_line(char *line)
 		exit(EXIT_FAILURE);
 	}
 
+
 	command = strtok(line, " ");
 	while (command)
 	{
