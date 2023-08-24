@@ -126,7 +126,7 @@ shell.c  shell.h  simple_shell   split_line.c
 
 ## `Flowchart of simple shell` :computer:
 
-![Untitled Diagram](https://github.com/Coconuts-del/holbertonschool-simple_shell/assets/124044887/632a6c34-9a37-4123-8155-b4988874cb86)
+![Untitled Diagram (1)](https://github.com/Coconuts-del/holbertonschool-simple_shell/assets/124044887/9f1d6b12-080e-4900-93e7-daed8b8bff79)
 
 
 
