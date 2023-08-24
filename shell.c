@@ -16,10 +16,10 @@ int main(int argc, char *argv[], char *envp[])
 
 	(void)argc;
 	(void)argv;
-
 	if (isatty(STDIN_FILENO) == 1)
 		interactive = 1;
-	do {
+	while (!status)
+	{
 		if (interactive)
 			printf("#prompt$ ");
 		line = read_line();
@@ -27,7 +27,6 @@ int main(int argc, char *argv[], char *envp[])
 			if (!interactive)
 				break;
 		commands = split_line(line);
-
 		if (commands[0])
 		{
 			if (strcmp(commands[0], "exit") == 0)
@@ -48,6 +47,6 @@ int main(int argc, char *argv[], char *envp[])
 		free(commands);
 		free(line);
 		line = NULL;
-	} while (!status);
+	}
 	return (0);
 }
