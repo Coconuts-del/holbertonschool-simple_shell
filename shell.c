@@ -1,3 +1,13 @@
+
+#include "shell.h"
+
+/**
+ * main - Main function for the simple shell
+ * @argc: Argument count
+ * @argv: Array of argument
+ * @envp: Array of env variables
+ * Return: Return code of the command execution
+ */
 int main(int argc, char *argv[], char *envp[])
 {
   char *line , *command_path;
