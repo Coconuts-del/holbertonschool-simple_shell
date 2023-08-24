@@ -123,6 +123,7 @@ AUTHORS  get_command_path.c  man_1_simple_shell  new_process.c  read_line.c  REA
 
 ## `Flowchart of simple shell` :computer:
 
+![Flowchart](https://github.com/Coconuts-del/holbertonschool-simple_shell/blob/main/Untitled%20Diagram.png)
 
 
 ## `License` :busts_in_silhouette:
