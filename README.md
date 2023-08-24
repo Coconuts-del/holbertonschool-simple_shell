@@ -93,7 +93,6 @@ echo "/bin/ls" | ./simple_shell
 
 ```
 root@ebd0ba4bd160:/holbertonschool-simple_shell# ./simple_shell
-```
 root@77ecf37628fa:/holbertonschool-simple_shell# ls -l
 total 60
 -rw-r--r-- 1 root root   269 Aug 14 05:29 AUTHORS
