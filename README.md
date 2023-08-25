@@ -10,7 +10,9 @@
 The shell manages the interaction between you and the operating system by prompting you for input, interpreting that input for the operating system, and then handling any resulting output from the operating system.
 Shells provide a way for you to communicate with the operating system.
 This is simply a recreation of a shell that takes user inputs (commands with arguements) and output of shell 
-Basic loop of a shell :
+
+## `Basic loop of a shell :`
+
 1. Print input
 2. Read a line from a standard input
 3. Turn the command lines string into an executable program
