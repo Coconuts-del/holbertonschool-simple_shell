@@ -9,7 +9,7 @@
 ## `Description`:hand:
 The shell manages the interaction between you and the operating system by prompting you for input, interpreting that input for the operating system, and then handling any resulting output from the operating system.
 Shells provide a way for you to communicate with the operating system.
-This is simply a recreation of a shell that takes user inputs (commands with arguements) and output accourntly
+This is simply a recreation of a shell that takes user inputs (commands with arguements) and output of shell 
 Basic loop of a shell :
 1. Print input
 2. Read a line from a standard input
@@ -24,7 +24,7 @@ Basic loop of a shell :
 | man_1_simple_shell | Manual of simple_shell. |
 | shell.h | Header file program. |
 | shell.c | The main function of the simple shell |
-| new_procees.c | Function that creates a new process. |
+| new_process.c | Function that creates a new process. |
 | get_command_path.c | Searches for the command in the system's PATH and returns the command's path if found. |
 | read_line.c | Function to read a line from stdin |
 | split_line.c | Parses a line into an array of commands. |
